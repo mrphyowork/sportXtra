@@ -61,3 +61,44 @@ form.addEventListener("submit", (e) => {
     errorBox.style.display = "block";
   }
 });
+
+// For Fetch API
+fetch("https://fakestoreapi.com/products")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then((data) => {
+    renderData(data); // Log the data to the console
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error); // Handle errors
+  });
+
+function renderData(data) {
+  const getData = document.getElementById("data");
+  getData.innerHTML = "";
+
+  let count = 0;
+  data.forEach((element) => {
+    if (count < 3) {
+      const card = document.createElement("card");
+      card.innerHTML = `
+    <div class="card-api row mt-3 justify-content-center">
+    <div class="card mx-2">
+    <img src="${element.image}" class="w-25 mx-auto" />
+    <p>ID: ${element.id}</p>
+    <p>Title: ${element.title}</p>
+    <p>Price: ${element.price}</p>
+    <p>Category: ${element.category}</p>
+    </div>
+    </div>
+    `;
+      getData.appendChild(card);
+      count++;
+    }
+  });
+}

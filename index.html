@@ -22,6 +22,15 @@
       rel="stylesheet"
     />
 
+    <!-- for font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
       body {
         background-color: lightyellow;
@@ -40,6 +49,8 @@
 
       nav {
         background-color: lightskyblue;
+        /* position: sticky; */
+        /* top: 10px; */
       }
 
       nav a img {
@@ -85,7 +96,7 @@
 
       #target-cart {
         position: fixed;
-        top: 0;
+        top: 20px;
         right: 0;
 
         height: 100%;
@@ -119,10 +130,27 @@
         border-radius: 10px;
       }
 
-      .card-api {
-        border: 2px solid black;
-        width: 20rem;
-        margin: auto;
+      .cart-button button {
+        border-radius: 10px;
+        padding: 7px;
+        color: green;
+      }
+
+      .cart-item button {
+        border-radius: 10px;
+        padding: 7px;
+        color: red;
+      }
+
+      footer {
+        background-color: lightblue;
+      }
+
+      .footer-div {
+        /* border: 2px solid black; */
+        border-radius: 7px;
+        background-color: lightcyan;
+        color: blue;
       }
     </style>
   </head>
@@ -131,7 +159,7 @@
     <div class="row" id="main-body">
       <div class="col-12">
         <!-- nav bar section -->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
               <img src="images/logo.png" alt="" width="60" />
@@ -186,8 +214,8 @@
         </nav>
 
         <section id="home">
-          <div class="row">
-            <div class="col-12 col-md-6">
+          <div class="row mt-5">
+            <div class="col-12 col-md-6 mt-3">
               <h1 class="mt-5 ms-5">Sports</h1>
               <h1 class="mt-2 ms-5">Equipment</h1>
               <h1 class="mt-2 ms-5">Homepage</h1>
@@ -273,7 +301,7 @@
           </div>
         </section>
 
-        <section id="football" class="p-3">
+        <section id="football" class="p-1">
           <div class="sectionHeader">
             <h3>Football Accessories</h3>
           </div>
@@ -300,6 +328,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/football_b.png" class="card-img-top" />
               <div class="card-body mx-auto">
@@ -318,6 +347,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/football_a.png"
@@ -340,17 +370,13 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/jersey_1.avif"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-              />
+              <img src="images/jersey_5.webp" class="card-img-top" alt="..." />
               <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 75.00</h5>
+                <h5 class="card-title text-center">$ 80.00</h5>
                 <button
                   id=""
-                  onclick="addToCart('Item D', 75)"
                   class="btn btn-primary"
                   style="
                     --bs-btn-padding-y: 0.25rem;
@@ -382,6 +408,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/jersey_3.webp" class="card-img-top" alt="..." />
               <div class="card-body mx-auto">
@@ -399,65 +426,7 @@
                 </button>
               </div>
             </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/jersey_4.png" class="card-img-top" />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 85.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/jersey_5.webp"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-                style="size: 150%"
-              />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 80.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
-          </div>
 
-          <div class="row mt-3 justify-content-center">
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/jersey_6.jpg" class="card-img-top" alt="..." />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 76.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
             <div class="card mx-2" style="width: 20rem">
               <img src="images/gloves_1.png" class="card-img-top" alt="..." />
               <div class="card-body mx-auto">
@@ -475,23 +444,7 @@
                 </button>
               </div>
             </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/gloves_2.png" class="card-img-top" />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 85.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/gloves_3.jpg"
@@ -780,23 +733,7 @@
                 </button>
               </div>
             </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/basketball_2.png" class="card-img-top" />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 85.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/basketball_3.jpeg"
@@ -818,6 +755,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/basketball_10.jpg"
@@ -826,6 +764,28 @@
               />
               <div class="card-body mx-auto">
                 <h5 class="card-title text-center">$ 80.00</h5>
+                <button
+                  id=""
+                  class="btn btn-primary"
+                  style="
+                    --bs-btn-padding-y: 0.25rem;
+                    --bs-btn-padding-x: 0.5rem;
+                    --bs-btn-font-size: 0.9rem;
+                  "
+                >
+                  Add to Card
+                </button>
+              </div>
+            </div>
+
+            <div class="card mx-2" style="width: 20rem">
+              <img
+                src="images/basketball_6.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body mx-auto">
+                <h5 class="card-title text-center">$ 76.00</h5>
                 <button
                   id=""
                   class="btn btn-primary"
@@ -863,6 +823,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/basketball_7.webp" class="card-img-top" />
               <div class="card-body mx-auto">
@@ -880,6 +841,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/basketball_8.avif"
@@ -901,6 +863,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/basketball_9.webp"
@@ -947,6 +910,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/cycling_2.webp" class="card-img-top" />
               <div class="card-body mx-auto">
@@ -964,6 +928,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/cycling_3.jpg"
@@ -985,6 +950,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/cycling_4.webp"
@@ -1026,6 +992,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/cycling_6.jpg" class="card-img-top" />
               <div class="card-body mx-auto">
@@ -1043,14 +1010,11 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/cycling_7.jpg"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-              />
+              <img src="images/cycling_9.jpg" class="card-img-top" alt="..." />
               <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 80.00</h5>
+                <h5 class="card-title text-center">$ 76.00</h5>
                 <button
                   id=""
                   class="btn btn-primary"
@@ -1064,14 +1028,11 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/cycling_8.png"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-              />
+              <img src="images/cycling_10.jpg" class="card-img-top" />
               <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 80.00</h5>
+                <h5 class="card-title text-center">$ 85.00</h5>
                 <button
                   id=""
                   class="btn btn-primary"
@@ -1105,6 +1066,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img src="images/cycling_10.jpg" class="card-img-top" />
               <div class="card-body mx-auto">
@@ -1122,6 +1084,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/cycling_11.webp"
@@ -1143,6 +1106,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/cycling_12.webp"
@@ -1193,23 +1157,7 @@
                 </button>
               </div>
             </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/swimming_headmask_1.avif" class="card-img-top" />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 85.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/swimming_headmask_2.webp"
@@ -1231,6 +1179,7 @@
                 </button>
               </div>
             </div>
+
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/swimming_shortpan.webp"
@@ -1252,9 +1201,7 @@
                 </button>
               </div>
             </div>
-          </div>
 
-          <div class="row mt-3 justify-content-center">
             <div class="card mx-2" style="width: 20rem">
               <img
                 src="images/swimming_ware_1.avif"
@@ -1263,65 +1210,6 @@
               />
               <div class="card-body mx-auto">
                 <h5 class="card-title text-center">$ 76.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img src="images/glass_1.jpg" class="card-img-top" />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 85.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/glass_2.avif"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-              />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 80.00</h5>
-                <button
-                  id=""
-                  class="btn btn-primary"
-                  style="
-                    --bs-btn-padding-y: 0.25rem;
-                    --bs-btn-padding-x: 0.5rem;
-                    --bs-btn-font-size: 0.9rem;
-                  "
-                >
-                  Add to Card
-                </button>
-              </div>
-            </div>
-            <div class="card mx-2" style="width: 20rem">
-              <img
-                src="images/glass_3.png"
-                class="card-img-top w-75 mx-auto"
-                alt="..."
-              />
-              <div class="card-body mx-auto">
-                <h5 class="card-title text-center">$ 80.00</h5>
                 <button
                   id=""
                   class="btn btn-primary"
@@ -1501,13 +1389,6 @@
           </div>
         </section>
 
-        <section id="fetch-api">
-          <div class="sectionHeader">
-            <h3>Test API</h3>
-          </div>
-          <div class="row mt-3 justify-content-center" id="data"></div>
-        </section>
-
         <section id="contact-us" class="p-3">
           <div class="container w-100 mt-3" id="contact-body">
             <div
@@ -1536,6 +1417,7 @@
                     <label for="" class="col-sm-3">Message:</label>
                     <div class="col-sm-9">
                       <textarea
+                        value="hello"
                         name=""
                         id="contact-text"
                         placeholder="Write Your feedback..."
@@ -1563,15 +1445,79 @@
             </div>
           </div>
         </section>
-        <footer></footer>
+
+        <footer class="p-4">
+          <div class="row justify-content-around">
+            <div class="footer-div col-12 col-lg-3 text-center mt-3">
+              <h5>Contact Us</h5>
+              <a href="tel:+0660550444" class="btn"
+                ><i class="fa-solid fa-tty"></i> : 066 055 0444</a
+              >
+              <br />
+              <a
+                href="https://maps.apple.com/?address=999/9%20Ratchadamri%20Rd.,%20Pathum%20Wan,%20Pathum%20Wan,%20Bangkok%2010330,%20Thailand&auid=4669815287718588610&ll=13.746558,100.539148&lsp=9902&q=centralwOrld&t=m"
+                class="btn"
+                ><i class="fa-solid fa-location-dot"></i> : 999/9 Rama I Rd,
+                Pathum Wan, Bangkok 10330</a
+              >
+              <br />
+              <a href="mailto:www.sportxtra.bkk@gmail.com" class="btn">
+                <i class="fa-solid fa-envelope-open"></i> :
+                www.sportxtra.bkk@gmail.com</a
+              >
+              <br />
+              <a href="https://www.google.com" class="btn" target="_blank">
+                <i class="fa-brands fa-facebook"></i> :
+                https://facebook.com/sportxtra@bkk</a
+              >
+              <br />
+            </div>
+
+            <div class="footer-div col-12 col-lg-3 mt-3">
+              <h5>About Us</h5>
+              <p>
+                At SportXtra, we are dedicated to empowering athletes and sports
+                enthusiasts of all levels to achieve their personal best.
+                Founded in 2021, our mission is to provide top-quality sporting
+                goods and exceptional customer service, fostering a community
+                where passion for sports thrives.
+              </p>
+            </div>
+
+            <div class="footer-div col-12 col-lg-3 mt-3">
+              <h6>Elevate Your Performance</h6>
+              <h6>Unleash Your Potential</h6>
+              <h6>Fuel Your Passion, Equip Your Game</h6>
+              <h6>Where Athletes Find Their Edge</h6>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-12 col-md-6 text-center mt-3">
+              <i class="fa-brands fa-facebook mx-3"></i>
+              <i class="fa-brands fa-instagram mx-3"></i>
+              <i class="fa-brands fa-x-twitter mx-3"></i>
+              <i class="fa-brands fa-youtube mx-3"></i>
+              <i class="fa-brands fa-linkedin mx-3"></i>
+            </div>
+
+            <div class="col-12 col-md-6 text-center mt-3">
+              <p>
+                copyright <i class="fa-regular fa-copyright"></i> 2025. All
+                Rights Reserve.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
 
-      <div id="target-cart" class="hidden col-3">
-        <h2 class="text-center mt-4 mb-2">Your Cart</h2>
-        <div class="cart" id="cart"></div>
+      <div id="target-cart" class="hidden col-3 mt-5">
+        <h2 class="text-center mt-5 mb-2">Your Cart</h2>
+        <div class="cart mt-3" id="cart"></div>
         <h3>Total: $<span id="total">0</span></h3>
-        <div class="mt-5 text-center">
+        <div class="cart-button mt-5 text-center">
           <button onclick="backToShopping()">Back To Shopping</button>
+          <button onclick="backToShopping()">Comfirm</button>
         </div>
       </div>
     </div>
@@ -1673,6 +1619,14 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
+    ></script>
+
+    <!-- for font awesome -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+      integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
   </body>
 </html>

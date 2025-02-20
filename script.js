@@ -35,14 +35,21 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // validation
-const name = document.getElementById("contact-name");
-// const textCount = document.getElementById("contact-text");
+
 const form = document.getElementById("contact-form");
 const errorBox = document.getElementById("error-box");
 
 errorBox.style.display = "none";
 
 form.addEventListener("submit", (e) => {
+  const name = document.getElementById("contact-name");
+  const textCount = document.getElementById("contact-text");
+  const charCount = document.getElementById("char-count");
+
+  const currentLength = textCount.value.length;
+  charCount.textContent = currentLength;
+  console.log(currentLength);
+
   const messages = [];
 
   // const textLenght = text;
@@ -51,9 +58,10 @@ form.addEventListener("submit", (e) => {
     messages.push("- Name is required!");
   }
 
-  // if (textCount > 100) {
-  //   messages.push("- Message box is over 200 words!");
-  // }
+  // console.log(charCount.value.length);
+  if (currentLength > 100) {
+    messages.push("- Message box is over 100 words!");
+  }
 
   if (messages.length > 0) {
     e.preventDefault();
@@ -61,44 +69,3 @@ form.addEventListener("submit", (e) => {
     errorBox.style.display = "block";
   }
 });
-
-// For Fetch API
-fetch("https://fakestoreapi.com/products")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json(); // Parse the response as JSON
-  })
-  .then((data) => {
-    renderData(data); // Log the data to the console
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error); // Handle errors
-  });
-
-function renderData(data) {
-  const getData = document.getElementById("data");
-  getData.innerHTML = "";
-
-  let count = 0;
-  data.forEach((element) => {
-    if (count < 3) {
-      const card = document.createElement("card");
-      card.innerHTML = `
-    <div class="card-api row mt-3 justify-content-center">
-    <div class="card mx-2">
-    <img src="${element.image}" class="w-25 mx-auto" />
-    <p>ID: ${element.id}</p>
-    <p>Title: ${element.title}</p>
-    <p>Price: ${element.price}</p>
-    <p>Category: ${element.category}</p>
-    </div>
-    </div>
-    `;
-      getData.appendChild(card);
-      count++;
-    }
-  });
-}

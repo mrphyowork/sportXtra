@@ -69,3 +69,62 @@ form.addEventListener("submit", (e) => {
     errorBox.style.display = "block";
   }
 });
+
+// products array
+let products = [
+  {
+    id: "ft-1",
+    Name: "Adadis FIFA 2022",
+    Price: 76,
+    image: "images/football_1.webp",
+  },
+
+  {
+    id: "ft-2",
+    Name: "Nike UCL",
+    Price: 70,
+    image: "images/football_b.png",
+  },
+  {
+    id: "ft-3",
+    Name: "Adadis EURO 2024",
+    Price: 80,
+    image: "images/football_1.webp",
+  },
+  {
+    id: "ftjy-1",
+    Name: "Puma ManCity Home",
+    Price: 96,
+    image: "images/jersey_5.webp",
+  },
+  {
+    id: "ftjy-2",
+    Name: "Adadis Argenitina Home",
+    Price: 90,
+    image: "images/jersey_2.webp",
+  },
+  {
+    id: "ftjy-3",
+    Name: "Nike Chelsea Home",
+    Price: 96,
+    image: "images/jersey_3.webp",
+  },
+  {
+    id: "ftgl-1",
+    Name: "Adadis Orange Gloves",
+    Price: 60,
+    image: "images/gloves_1.png",
+  },
+  {
+    id: "ftgl-2",
+    Name: "Adadis Pink Gloves",
+    Price: 55,
+    image: "images/gloves_3.jpg",
+  },
+  {
+    id: "ftgl-1",
+    Name: "Adadis Orange Gloves",
+    Price: 60,
+    image: "images/gloves_1.png",
+  },
+];

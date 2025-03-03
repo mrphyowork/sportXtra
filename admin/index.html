@@ -693,5 +693,36 @@
 
     <!-- for date and time -->
     <script src="script.js"></script>
+
+    <script>
+      // Listener code (in background script or content script)
+      chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.type === "my-action") {
+          try {
+            // Simulate doing a long task.
+            setTimeout(() => {
+              // This is the response. Without this line there will be an error
+              sendResponse({ status: "completed" }); // Send response after task
+            }, 1000);
+          } catch (e) {
+            console.log("Error in the listener", e);
+            sendResponse({ status: "failed" }); // Send response in case of error.
+          }
+
+          // Indicates that `sendResponse` will be called asynchronously
+          return true; // This is mandatory when sendResponse is asynchronous
+        }
+      });
+
+      // Sender code (in content script or popup)
+      chrome.runtime.sendMessage({ type: "my-action" }, (response) => {
+        if (response) {
+          // Check if response was received
+          console.log("Response:", response);
+        } else {
+          console.log("Error: No response received");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -40,10 +40,9 @@ const mainBody = document.getElementById("mainBody");
 const formBody = document.getElementById("formBody");
 const userName = document.getElementById("userName");
 const password = document.getElementById("password");
+const errorBox = document.getElementById("error");
 
-formBody.addEventListener("click", (e) => {
-  const errorBox = document.getElementById("error");
-
+loginButton.addEventListener("click", (e) => {
   // console.log(userName.value);
   // console.log(password.value);
 

@@ -34,6 +34,7 @@
     <style>
       body {
         background-color: lightyellow;
+        position: relative;
       }
 
       #clock {
@@ -95,11 +96,11 @@
       }
 
       #targetCart {
-        position: fixed;
+        position: absolute;
         top: 20px;
         right: 0;
 
-        height: 100%;
+        height: fit-content;
         background-color: #f9f9f9;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s;
@@ -253,7 +254,7 @@
           </div>
         </nav>
 
-        <section id="home">
+        <section id="home" class="mx-auto">
           <div class="row mt-5">
             <div class="col-12 col-md-6 mt-3">
               <h1 class="mt-5 ms-5">Sports</h1>
@@ -1652,7 +1653,7 @@
         const targetCart = document.getElementById("targetCart");
         const mainBody = document.getElementById("mainBody");
         if (targetCart) {
-          // targetCart.scrollIntoView({ behavior: "smooth" });
+          targetCart.scrollIntoView({ behavior: "smooth" });
           targetCart.classList.remove("hidden");
           targetCart.classList.add("visible");
           mainBody.classList.remove("col-12");

@@ -88,68 +88,70 @@
   </head>
   <body>
     <div class="container-fluid w-50 mt-5" id="formBody">
-      <h2 class="mb-5">
-        Welcome<span class="d-none d-lg-inline"
-          >, Admin! You are now logged in.</span
-        >
-      </h2>
-      <div id="error" class="text-danger mb-3"></div>
+      <form action="">
+        <h2 class="mb-5">
+          Welcome<span class="d-none d-lg-inline"
+            >, Admin! You are now logged in.</span
+          >
+        </h2>
+        <div id="error" class="text-danger mb-3"></div>
 
-      <div class="row text-center">
-        <div class="col-12 col-sm-3">
-          <label for="userName" class="">Username:</label>
+        <div class="row text-center">
+          <div class="col-12 col-sm-3">
+            <label for="userName" class="">Username:</label>
+          </div>
+          <div class="col-12 col-sm-9">
+            <input
+              type="text"
+              class="w-100 form-control"
+              id="userName"
+              placeholder="admin"
+            />
+          </div>
         </div>
-        <div class="col-12 col-sm-9">
-          <input
-            type="text"
-            class="w-100 form-control"
-            id="userName"
-            placeholder="admin"
-          />
+
+        <div class="row text-center mt-3">
+          <div class="col-12 col-sm-3">
+            <label for="password" class="">Password:</label>
+          </div>
+          <div class="col-12 col-sm-9">
+            <input
+              type="password"
+              class="w-100 form-control"
+              id="password"
+              placeholder="admin"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="row text-center mt-3">
-        <div class="col-12 col-sm-3">
-          <label for="password" class="">Password:</label>
+        <div class="row justify-content-evenly mt-3">
+          <button
+            type="click"
+            class="btn btn-outline-primary col-12 col-sm-3 mt-2"
+            id="loginButton"
+            style="width: fit-content"
+          >
+            Login
+          </button>
+
+          <button
+            type="reset"
+            class="btn btn-outline-danger col-12 col-sm-3 mt-2"
+            id="resetBtn"
+            style="width: fit-content"
+          >
+            Clear
+          </button>
+
+          <a
+            href="index.html"
+            class="btn btn-outline-warning col-12 col-sm-3 mt-2"
+            id="cancelBtn"
+            style="width: fit-content"
+            >Cancel</a
+          >
         </div>
-        <div class="col-12 col-sm-9">
-          <input
-            type="password"
-            class="w-100 form-control"
-            id="password"
-            placeholder="admin"
-          />
-        </div>
-      </div>
-
-      <div class="row justify-content-evenly mt-3">
-        <button
-          type="click"
-          class="btn btn-outline-primary col-12 col-sm-3 mt-2"
-          id="loginButton"
-          style="width: fit-content"
-        >
-          Login
-        </button>
-
-        <button
-          type="reset"
-          class="btn btn-outline-danger col-12 col-sm-3 mt-2"
-          id="resetBtn"
-          style="width: fit-content"
-        >
-          Clear
-        </button>
-
-        <a
-          href="index.html"
-          class="btn btn-outline-warning col-12 col-sm-3 mt-2"
-          id="cancelBtn"
-          style="width: fit-content"
-          >Cancel</a
-        >
-      </div>
+      </form>
     </div>
 
     <div

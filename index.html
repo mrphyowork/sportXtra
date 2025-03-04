@@ -1445,11 +1445,12 @@
         <section id="contactUs" class="p-3">
           <div class="container w-100 mt-3" id="contactBody">
             <div
-              id="error-box"
+              id="errorBox"
               class="alert alert-danger alert-dismissible fade show text-start"
             >
               Error
             </div>
+
             <div class="row">
               <div class="col-12 col-sm-6">
                 <h2 class="mt-2 mb-5 text-center">Contact Form</h2>
@@ -1457,30 +1458,33 @@
                   <div class="mb-3 row text-center">
                     <label for="name" class="col-sm-3">Name :</label>
                     <div class="col-sm-9">
-                      <input type="text" id="contact-name" />
+                      <input type="text" id="contactName" />
                     </div>
                   </div>
+
                   <div class="mb-3 row text-center">
                     <label for="" class="col-sm-3">Email:</label>
                     <div class="col-sm-9">
-                      <input type="email" id="contact-mail" />
+                      <input type="email" id="contactMail" />
                     </div>
                   </div>
+
                   <div class="mb-3 row text-center">
                     <label for="" class="col-sm-3">Message:</label>
                     <div class="col-sm-9">
                       <textarea
                         value="hello"
                         name=""
-                        id="contact-text"
+                        id="contactText"
                         placeholder="Write Your feedback..."
                         rows="3"
                         cols="21"
                         oninput="checkCount()"
                       ></textarea>
-                      <p><span id="char-count">0</span> / 100 characters</p>
+                      <p><span id="charCount">0</span> / 100 characters</p>
                     </div>
                   </div>
+
                   <button type="submit" class="btn btn-primary w-50 mb-2">
                     Send
                   </button>
@@ -1526,7 +1530,7 @@
               <br />
             </div>
 
-            <div class="footerDiv col-12 col-lg-3 mt-3">
+            <div class="footerDiv col-12 col-lg-3 mt-3 p-4">
               <h5 class="text-center">About Us</h5>
               <p class="footerP">
                 At
@@ -1536,15 +1540,16 @@
                     ><span class="logoX">X</span
                     ><span class="logoTra">tra</span>
                   </span></a
-                >, we are dedicated to empowering athletes and sports
-                enthusiasts of all levels to achieve their personal best.
-                Founded in 2021, our mission is to provide top-quality sporting
-                goods and exceptional customer service, fostering a community
-                where passion for sports thrives.
+                ><span class="d-sm-none text-white">SportsXtra</span> , we are
+                dedicated to empowering athletes and sports enthusiasts of all
+                levels to achieve their personal best. Founded in 2021, our
+                mission is to provide top-quality sporting goods and exceptional
+                customer service, fostering a community where passion for sports
+                thrives.
               </p>
             </div>
 
-            <div class="footerDiv col-12 col-lg-3 mt-3">
+            <div class="footerDiv col-12 col-lg-3 mt-3 p-2">
               <h6 class="mt-5 ms-3">Elevate Your Performance</h6>
               <h6 class="ms-3">Unleash Your Potential</h6>
               <h6 class="ms-3">Fuel Your Passion, Equip Your Game</h6>
@@ -1657,8 +1662,8 @@
 
       // for char count
       function checkCount() {
-        let textInput = document.getElementById("contact-text");
-        let charCount = document.getElementById("char-count");
+        let textInput = document.getElementById("contactText");
+        let charCount = document.getElementById("charCount");
 
         const currentLength = textInput.value.length;
         charCount.textContent = currentLength;

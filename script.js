@@ -36,15 +36,15 @@ updateClock();
 
 // validation
 
-const form = document.getElementById("contact-form");
-const errorBox = document.getElementById("error-box");
+const form = document.getElementById("contactForm");
+const errorBox = document.getElementById("errorBox");
 
 errorBox.style.display = "none";
 
 form.addEventListener("submit", (e) => {
-  const name = document.getElementById("contact-name");
-  const textCount = document.getElementById("contact-text");
-  const charCount = document.getElementById("char-count");
+  const name = document.getElementById("contactName");
+  const textCount = document.getElementById("contactText");
+  const charCount = document.getElementById("charCount");
 
   const currentLength = textCount.value.length;
   charCount.textContent = currentLength;

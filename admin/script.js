@@ -41,7 +41,7 @@ const formBody = document.getElementById("formBody");
 const userName = document.getElementById("userName");
 const password = document.getElementById("password");
 
-formBody.addEventListener("submit", (e) => {
+formBody.addEventListener("click", (e) => {
   const errorBox = document.getElementById("error");
 
   // console.log(userName.value);

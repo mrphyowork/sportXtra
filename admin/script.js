@@ -36,14 +36,14 @@ updateClock();
 
 // To check validation
 const loginButton = document.getElementById("loginButton");
-loginButton.addEventListener("click", function () {
-  const mainBody = document.getElementById("mainBody");
-  const formBody = document.getElementById("formBody");
+const mainBody = document.getElementById("mainBody");
+const formBody = document.getElementById("formBody");
+const userName = document.getElementById("userName");
+const password = document.getElementById("password");
 
+formBody.addEventListener("submit", (e) => {
   const errorBox = document.getElementById("error");
 
-  const userName = document.getElementById("userName");
-  const password = document.getElementById("password");
   // console.log(userName.value);
   // console.log(password.value);
 
@@ -63,7 +63,7 @@ loginButton.addEventListener("click", function () {
   // console.log(messageBox.length);
 
   if (messageBox.length > 0) {
-    // e.preventDefault();
+    e.preventDefault();
     errorBox.innerHTML = messageBox.join("<br>");
     errorBox.style.display = "block";
   } else {

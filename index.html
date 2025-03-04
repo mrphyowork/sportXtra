@@ -94,7 +94,7 @@
         background-color: lightblue;
       }
 
-      #target-cart {
+      #targetCart {
         position: fixed;
         top: 20px;
         right: 0;
@@ -106,7 +106,7 @@
         transform: translateX(100%);
       }
 
-      #target-cart.visible {
+      #targetCart.visible {
         transform: translateX(0);
       }
 
@@ -190,7 +190,7 @@
   </head>
 
   <body>
-    <div class="row" id="main-body">
+    <div class="row" id="mainBody">
       <div class="col-12">
         <!-- nav bar section -->
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -1571,7 +1571,7 @@
         </section>
       </div>
 
-      <div id="target-cart" class="hidden col-3 mt-5">
+      <div id="targetCart" class="hidden col-3 mt-5">
         <h2 class="text-center mt-5 mb-2">Your Cart</h2>
         <div class="cart mt-3" id="cart"></div>
         <h3>Total: $<span id="total">0</span></h3>
@@ -1615,8 +1615,8 @@
       }
 
       function backToShopping() {
-        const targetCart = document.getElementById("target-cart");
-        const mainBody = document.getElementById("main-body");
+        const targetCart = document.getElementById("targetCart");
+        const mainBody = document.getElementById("mainBody");
 
         targetCart.classList.add("hidden");
         targetCart.classList.remove("visible");
@@ -1642,8 +1642,8 @@
         });
         totalSpan.textContent = total.toFixed(2);
 
-        const targetCart = document.getElementById("target-cart");
-        const mainBody = document.getElementById("main-body");
+        const targetCart = document.getElementById("targetCart");
+        const mainBody = document.getElementById("mainBody");
         if (targetCart) {
           // targetCart.scrollIntoView({ behavior: "smooth" });
           targetCart.classList.remove("hidden");
